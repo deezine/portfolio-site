@@ -1,0 +1,48 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Variables > Space
+// =======================================================
+:root {
+  // * 0px
+  --sp-none: #{sp-space(none)};
+
+  // * 8px
+  --sp-xs: #{sp-space(xs)};
+
+  // * 16px
+  --sp-sm: #{sp-space(sm)};
+
+  // * 24px
+  --sp-md: #{sp-space(md)};
+
+  // * 32px
+  --sp-lg: #{sp-space(lg)};
+
+  // * 40px
+  --sp-xl: #{sp-space(xl)};
+
+  // * 48px
+  --sp-2xl: #{sp-space(2xl)};
+
+  // * 56px
+  --sp-3xl: #{sp-space(3xl)};
+
+  // * 64px
+  --sp-4xl: #{sp-space(4xl)};
+
+  // * 72px
+  --sp-5xl: #{sp-space(5xl)};
+
+  // * 80px
+  --sp-6xl: #{sp-space(6xl)};
+
+  // * 88px
+  --sp-7xl: #{sp-space(7xl)};
+
+  // * 96px
+  --sp-8xl: #{sp-space(8xl)};
+}

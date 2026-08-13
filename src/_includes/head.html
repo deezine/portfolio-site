@@ -1,0 +1,99 @@
+<!-- ===| Device |=== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ===| Preloading |=== -->
+<!-- Preload all typefaces. -->
+<link
+  rel="preload"
+  href="/assets/fonts/tex-gyre-heros-regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/tex-gyre-heros-bold.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/libre-caslon-condensed-semibold.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/libre-caslon-condensed-regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/libre-caslon-condensed-regular-italic.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<!-- Preload CSS -->
+<link rel="preload" href="/css/main.css" as="style" type="text/css" />
+
+<!-- === | CSS | === -->
+<link rel="stylesheet" href="/css/main.css" />
+
+<!-- ===| Favicon |=== -->
+<link
+  rel="icon"
+  href="/assets/favicon/favicon.svg"
+  sizes="any"
+  type="image/svg+xml"
+/>
+
+<!-- === | Page Information | === -->
+<title>{{ title }}</title>
+<meta name="author" content="{{ author }}" />
+<meta name="description" content="{{ description }}" />
+<meta name="keywords" content="{{ keywords }}" />
+
+<!-- === | SEO | === -->
+<!-- Robots -->
+<meta name="robots" content="{{ robots }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ title}}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="yourwebsite.com" />
+<meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta
+  name="twitter:image"
+  content="https://yourwebsite.com/path-to-image.jpg"
+/>
+
+<!-- Canonical -->
+<link rel="canonical" href="https://yourwebsite.com/your-page" />
+
+<!-- === | Mobile Themes | === -->
+<!-- Light -->
+<meta
+  name="theme-color"
+  media="(prefers-color-scheme: light)"
+  content="hsl(30, 15%, 96%)"
+/>
+
+<!-- Dark -->
+<meta
+  name="theme-color"
+  media="(prefers-color-scheme: dark)"
+  content="hsl(30, 30%, 8%)"
+/>

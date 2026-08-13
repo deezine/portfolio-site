@@ -1,0 +1,73 @@
+// SCSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// Tokens
+// =======================================================
+
+// Palette: Light
+// -------------------------------------------------------
+$_palette-light: (
+  // * Surface
+  "neutral-900": hsl(30deg 15% 96%),
+  // * Text 3
+  "neutral-500": hsl(35deg 0% 50%),
+  // * Underline
+  "neutral-400": hsl(30deg 4% 40%),
+  // * Text 2
+  "neutral-300": hsl(35deg 4% 30%),
+  // * Text 1
+  "neutral-100": hsl(30deg 4% 8%)
+);
+
+// Palette: Dark
+// -------------------------------------------------------
+$_palette-dark: (
+  // * Text 1
+  "neutral-900": hsl(30deg 4% 96%),
+  // * Text 2
+  "neutral-800": hsl(30deg 4% 80%),
+  // * Text 3
+  "neutral-700": hsl(30deg 4% 70%),
+  // * Underline
+  "neutral-600": hsl(30deg 4% 60%),
+  // * Surface
+  "neutral-100": hsl(30deg 30% 8%)
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Looks at the map for the key value.
+@function get-palette($map, $key) {
+  // * If no key value is found, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as 0.";
+
+    // * Return a value of zero.
+    @return 0;
+  }
+
+  // * Otherwise, return the key-value from the map.
+  @return map.get($map, $key);
+}
+
+// Wrapper
+// -------------------------------------------------------
+
+// --- Palette: Light ----
+// * Return the key value in the $_palette-light map via the getter function.
+@function palette-light($key) {
+  @return get-palette($_palette-light, $key);
+}
+
+// --- Palette: Dark ----
+// * Return the key value in the $_palette-dark map via the getter function.
+@function palette-dark($key) {
+  @return get-palette($_palette-dark, $key);
+}

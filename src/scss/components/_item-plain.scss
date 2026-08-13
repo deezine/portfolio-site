@@ -1,0 +1,25 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// .item-plain
+// =======================================================
+.item-plain {
+  // * Applies the block-default layout properties.
+  @include mx-lt-base("block-default");
+
+  padding: var(--item-plain-padding);
+  border-bottom: var(--item-plain-border);
+
+  // .item-plain__body
+  // -------------------------------------------------------
+  &__body {
+    // * 16px gap between all direct children.
+    @include mx-owl-selector(var(--item-plain-body-gap));
+
+    // * 20px gap between title and body.
+    margin-top: var(--item-plain-gap);
+  }
+}

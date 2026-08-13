@@ -1,0 +1,246 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// Fonts
+// =======================================================
+
+// Tex Gyre Heros
+// -------------------------------------------------------
+@font-face {
+  font-family: "Tex Gyre Heros";
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../assets/fonts/tex-gyre-heros-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Tex Gyre Heros";
+  font-weight: 700;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../assets/fonts/tex-gyre-heros-bold.woff2") format("woff2");
+}
+
+// Libre Caslon Condensed
+// -------------------------------------------------------
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  font-weight: 600;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../assets/fonts/libre-caslon-condensed-semibold.woff2");
+}
+
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../assets/fonts/libre-caslon-condensed-regular.woff2");
+}
+
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  font-weight: 400;
+  font-style: italic;
+
+  font-display: swap;
+  src: url("../assets/fonts/libre-caslon-condensed-regular-italic.woff2");
+}
+
+// Properties
+// =======================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ul,
+figcaption,
+a,
+p {
+  // * Disables user selection on all semantic text elements.
+  user-select: none;
+}
+
+a {
+  // * All link elements with show a pointer on hover.
+  cursor: pointer;
+}
+
+p > a {
+  // * Any links contained inside body text will flow correctly.
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+// Styles
+// =======================================================
+
+.text-headline,
+.text-body {
+  // * Disables user selection.
+  user-select: none;
+
+  // * Prevents margin collapse from font-trim.
+  display: flow-root;
+
+  // * ::before and ::after are used for font-trim margins.
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Headline
+// ------------------------------------------------------
+.text-headline {
+  font-family: "Libre Caslon Condensed", serif;
+  font-style: normal;
+
+  // Large
+  &--type-lg-semibold {
+    @include mx-ft-base("lg", "headline-lg", "semibold");
+  }
+
+  // Medium
+  &--type-md-semibold {
+    @include mx-ft-base("md", "headline-md", "semibold");
+  }
+
+  // Small
+  &--type-sm-semibold {
+    @include mx-ft-base("sm", "headline-sm", "semibold");
+  }
+}
+
+// Body
+// ------------------------------------------------------
+.text-body {
+  // Plain (Sans-Serif), Bold
+  &--type-plain-bold {
+    font-family: "TeX Gyre Heros", sans-serif;
+    font-style: normal;
+
+    @include mx-ft-base("sm", "body-plain", "bold");
+  }
+
+  // Plain (Sans-Serif), Regular
+  &--type-plain-reg {
+    font-family: "TeX Gyre Heros", sans-serif;
+    font-style: normal;
+
+    @include mx-ft-base("sm", "body-plain", "regular");
+  }
+
+  // Emphasis (Serif), Italic
+  &--type-emphasis-reg {
+    font-family: "Libre Caslon Condensed", serif;
+    font-style: italic;
+    font-variant-ligatures: none;
+
+    @include mx-ft-base("sm", "body-emphasis", "regular");
+  }
+}
+
+// * Any emphasis text inside regular body text will flow correctly.
+.text-body--type-plain-reg > .text-body--type-emphasis-reg {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+// Underline
+// -------------------------------------------------------
+.text-underline {
+  // * No underline style.
+  &--style-none {
+    text-decoration: var(--ft-underline-none);
+  }
+
+  // * Default underline style.
+  &--style-default {
+    text-decoration: var(--ft-underline-default);
+    text-decoration-color: var(--cl-text-underline);
+    text-decoration-style: var(--ft-underline-style);
+    text-decoration-thickness: var(--ft-underline-width);
+    text-underline-offset: var(--ft-underline-offset);
+  }
+}
+
+// Color
+// =======================================================
+.text-color {
+  &--primary {
+    color: var(--cl-text-primary);
+  }
+
+  &--secondary {
+    color: var(--cl-text-secondary);
+  }
+
+  &--tertiary {
+    color: var(--cl-text-tertiary);
+  }
+}
+
+// Spacing
+// =======================================================
+
+// Title
+// -------------------------------------------------------
+.text-title {
+  // * 32px gap between title and body
+  &--margin-lg {
+    margin-bottom: var(--ft-margin-lg);
+  }
+
+  &--margin-md {
+    margin-bottom: var(--ft-margin-md);
+  }
+
+  // * 24px gap between title and body.
+  &--margin-sm {
+    margin-bottom: var(--ft-margin-sm);
+  }
+}
+
+// Paragraphs
+// -------------------------------------------------------
+
+// * This is the container for text paragraphs.
+.text-paragraph-wrapper {
+  // * Breaks words if they are way too long.
+  overflow-wrap: break-word;
+
+  // * Wraps text so it looks nice on the web.
+  text-wrap-style: pretty;
+
+  // * 32px between large paragraphs (headline-lg).
+  & > .text-paragraph--margin-lg + .text-paragraph--margin-lg {
+    margin-top: var(--ft-margin-lg);
+  }
+
+  // * 28px gap between medium paragraphs (headline-md).
+  & > .text-paragraph--margin-md + .text-paragraph--margin-md {
+    margin-top: var(--ft-margin-md);
+  }
+
+  // * 24px gap between small paragraphs (headline-sm, body)
+  & > .text-paragraph--margin-sm + .text-paragraph--margin-sm {
+    margin-top: var(--ft-margin-sm);
+  }
+}

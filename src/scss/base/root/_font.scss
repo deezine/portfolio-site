@@ -1,0 +1,127 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Variables > Font
+// ========================================================
+:root {
+  // Weight
+  // ------------------------------------------------------
+  --ft-weight-regular: #{ft-weight("regular")};
+  --ft-weight-semibold: #{ft-weight("semibold")};
+  --ft-weight-bold: #{ft-weight("bold")};
+
+  // Size
+  // ------------------------------------------------------
+  --ft-size-sm: #{ft-size("sm")};
+  --ft-size-md: #{ft-size("md")};
+  --ft-size-lg: #{ft-size("lg")};
+
+  // Leading
+  // ------------------------------------------------------
+  --ft-leading-sm: #{ft-leading("sm")};
+  --ft-leading-md: #{ft-leading("md")};
+  --ft-leading-lg: #{ft-leading("lg")};
+
+  // Paragraph Spacing
+  // ------------------------------------------------------
+  // * Interpolates function to summon and alias values.
+  --ft-margin-sm: #{ft-margin("sm")};
+  --ft-margin-md: #{ft-margin("md")};
+  --ft-margin-lg: #{ft-margin("lg")};
+
+  // Decoration
+  // ------------------------------------------------------
+  // * Interpolates function to summon and alias values.
+  --ft-underline-none: #{ft-underline("none")};
+  --ft-underline-default: #{ft-underline("default", "decoration")};
+  --ft-underline-style: #{ft-underline("default", "style")};
+  --ft-underline-width: #{ft-underline("default", "width")};
+  --ft-underline-offset: #{ft-underline("default", "offset")};
+
+  // Letter Spacing
+  // ------------------------------------------------------
+  // * Interpolates function to summon and alias values from inside nested map.
+  --ft-tracking-headline-sm: #{ft-tracking("headline", "sm")};
+  --ft-tracking-headline-md: #{ft-tracking("headline", "md")};
+  --ft-tracking-headline-lg: #{ft-tracking("headline", "lg")};
+  --ft-tracking-body-plain: #{ft-tracking("body", "plain")};
+  --ft-tracking-body-emphasis: #{ft-tracking("body", "emphasis")};
+
+  // Trim
+  // ------------------------------------------------------
+  // --- Headlines ---
+  --ft-trim-headline-sm-semibold-top: #{ft-trim(
+      "headline",
+      "sm",
+      "semibold",
+      "trim-top"
+    )};
+  --ft-trim-headline-sm-semibold-bottom: #{ft-trim(
+      "headline",
+      "sm",
+      "semibold",
+      "trim-bottom"
+    )};
+  --ft-trim-headline-md-semibold-top: #{ft-trim(
+      "headline",
+      "md",
+      "semibold",
+      "trim-top"
+    )};
+  --ft-trim-headline-md-semibold-bottom: #{ft-trim(
+      "headline",
+      "md",
+      "semibold",
+      "trim-bottom"
+    )};
+  --ft-trim-headline-lg-semibold-top: #{ft-trim(
+      "headline",
+      "lg",
+      "semibold",
+      "trim-top"
+    )};
+  --ft-trim-headline-lg-semibold-bottom: #{ft-trim(
+      "headline",
+      "lg",
+      "semibold",
+      "trim-bottom"
+    )};
+
+  // --- Body - Plain ---
+  --ft-trim-body-plain-bold-top: #{ft-trim("body", "plain", "bold", "trim-top")};
+  --ft-trim-body-plain-bold-bottom: #{ft-trim(
+      "body",
+      "plain",
+      "bold",
+      "trim-bottom"
+    )};
+  --ft-trim-body-plain-regular-top: #{ft-trim(
+      "body",
+      "plain",
+      "bold",
+      "trim-top"
+    )};
+  --ft-trim-body-plain-regular-bottom: #{ft-trim(
+      "body",
+      "plain",
+      "regular",
+      "trim-bottom"
+    )};
+
+  // --- Body - Emphasis ---
+  --ft-trim-body-emphasis-regular-top: #{ft-trim(
+      "body",
+      "emphasis",
+      "regular",
+      "trim-top"
+    )};
+  --ft-trim-body-emphasis-regular-bottom: #{ft-trim(
+      "body",
+      "emphasis",
+      "regular",
+      "trim-bottom"
+    )};
+}

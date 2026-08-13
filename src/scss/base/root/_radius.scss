@@ -1,0 +1,21 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Variables > Radius
+// ========================================================
+:root {
+  // * 0px
+  --rd-none: #{rd-radius(none)};
+
+  // * 2px
+  --rd-xs: #{rd-radius(xs)};
+
+  // * 4px
+  --rd-sm: #{rd-radius(sm)};
+
+  // * 8px
+  --rd-md: #{rd-radius(md)};
+}

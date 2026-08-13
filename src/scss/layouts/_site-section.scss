@@ -1,0 +1,29 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// .site-section
+// =======================================================
+.site-section {
+  // * Apply the block-default layout properties.
+  @include mx-lt-base("block-default");
+
+  // .site-section--padding-x
+  // ------------------------------------------------------
+  // * Sections with small top padding.
+  &--padding-sm {
+    padding: var(--site-section-padding-sm);
+  }
+
+  // * Sections with medium top padding.
+  &--padding-md {
+    padding: var(--site-section-padding-md);
+  }
+
+  // * Sections with large top padding.
+  &--padding-lg {
+    padding: var(--site-section-padding-lg);
+  }
+}

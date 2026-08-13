@@ -1,0 +1,9 @@
+// Mixin > Lobotmized Owl Selector
+// =======================================================
+@mixin owl-selector($gap) {
+  // * Applies spacing between adjacent direct children.
+  > * + * {
+    // * Value of $gap is determined by input.
+    margin-top: $gap;
+  }
+}

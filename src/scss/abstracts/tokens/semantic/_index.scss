@@ -1,0 +1,32 @@
+// Index > Semantic
+// =======================================================
+
+// Space
+// -------------------------------------------------------
+// * Forward space with the prefix of sp-*.
+@forward "space" as sp-*;
+
+// Radius
+// -------------------------------------------------------
+// * Forward radius with the prefix of rd-*.
+@forward "radius" as rd-*;
+
+// Color
+// -------------------------------------------------------
+// * Forward color with the prefix of cl-*.
+@forward "color" as cl-*;
+
+// Font
+// -------------------------------------------------------
+// * Forward font with the prefix of ft-*.
+@forward "font" as ft-*;
+
+// Breakpoints
+// -------------------------------------------------------
+// * Forward breakpoints with the prefix of bp-*.
+@forward "breakpoint" as bp-*;
+
+// Layout
+// -------------------------------------------------------
+// * Forward layout with the prefix of lt-*.
+@forward "layout" as lt-*;

@@ -1,0 +1,12 @@
+// Index > Abstracts
+// =======================================================
+
+// Semantic Tokens
+// -------------------------------------------------------
+// * Forwarded with the namespaces found in semantic/_index.scss
+@forward "tokens/semantic/index";
+
+// Mixins
+// -------------------------------------------------------
+// * Forward with the prefix mx-*.
+@forward "mixins/index" as mx-*;

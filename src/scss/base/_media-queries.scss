@@ -1,0 +1,29 @@
+// SCSSs
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// Media Queries
+// =======================================================
+
+// Devices
+// -------------------------------------------------------
+
+// --- 640 ---
+@media only screen and (min-width: var(--breakpoint-phablet)) {
+}
+
+// Theme
+// -------------------------------------------------------
+@media (prefers-color-scheme: dark) {
+  // * Changes the color theme to dark on user preference.
+  :root {
+    --cl-surface-default: #{cl-theme-dark("surface-default")};
+    --cl-text-primary: #{cl-theme-dark("text-primary")};
+    --cl-text-secondary: #{cl-theme-dark("text-secondary")};
+    --cl-text-tertiary: #{cl-theme-dark("text-tertiary")};
+    --cl-text-underline: #{cl-theme-dark("text-underline")};
+    --cl-icon-default: #{cl-theme-dark("icon-default")};
+  }
+}

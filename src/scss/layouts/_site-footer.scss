@@ -1,0 +1,44 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// .site-footer
+// =======================================================
+.site-footer {
+  // * Apply the block-default layout properties.
+  @include mx-lt-base("block-default");
+
+  padding: var(--site-footer-padding);
+
+  // .site-footer__body
+  // ------------------------------------------------------
+  &__body {
+    // * 20px gap between title and body.
+    margin-top: var(--site-footer-gap);
+  }
+
+  // .site-footer__copyright
+  // ------------------------------------------------------
+  &__copyright {
+    // * 16x gap between direct children.
+    @include mx-owl-selector(var(--site-footer-copyright-gap));
+
+    // * 64px gap between copyright and links.
+    margin-top: var(--site-footer-body-gap);
+  }
+
+  // .site-footer__links
+  // ------------------------------------------------------
+  &__links {
+    // * Aply the flex-row-start-start layour properties.
+    @include mx-lt-base("flex-row-start-start");
+
+    gap: var(--site-footer-links-gap);
+
+    > a {
+      flex: 0 0 auto;
+    }
+  }
+}

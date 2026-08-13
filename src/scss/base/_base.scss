@@ -1,0 +1,104 @@
+// * Imports semantinc tokens and mixins without namespace (forwarded with prefixes).
+@use "../abstracts/index" as *;
+
+// HTML
+// =======================================================
+html {
+  // * Reserves space for scrollbar, but only displays it when necessary.
+  scrollbar-gutter: stable;
+
+  // * The scrollbar appears on vertical overflow.
+  overflow-y: scroll;
+}
+
+// BODY
+// =======================================================
+body {
+  user-select: none;
+
+  // --- Size --
+  min-height: 100vh;
+
+  // --- Margin ---
+  margin: 0;
+
+  // --- Color ---
+  background-color: var(--cl-surface-default);
+}
+
+// .site-wrapper
+// -------------------------------------------------------
+.site-wrapper {
+  // --- Layout ---
+  @include mx-lt-base("block-default");
+
+  // * Layout is contained to .site-wrapper and will not affect body or html.
+  contain: layout;
+
+  // --- Size ---
+  // * .site-wrapper will be no smaller than 390px and no larger than 560px.
+  min-width: var(--site-wrapper-min-width);
+  max-width: var(--site-wrapper-max-width);
+
+  // * .site-wrapper is as tall as the viewport.
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  // --- Margin ---
+  // * Centers .site-wrapper in body.
+  margin-block: 0;
+  margin-inline: auto;
+
+  // --- Padding ---
+  padding: var(--site-wrapper-padding);
+
+  // --- Gap ---
+  // * 0px gap between direct children of .site-wrapper.
+  @include mx-owl-selector(var(--site-wrapper-gap));
+}
+
+// .site-img
+// -------------------------------------------------------
+.site-img {
+  /// * Sitewide properties for all images.
+  width: 100%;
+  border-radius: var(--img-radius);
+  object-fit: cover;
+
+  // * Thesese images are very thin.
+  &--style-wide {
+    aspect-ratio: 2 / 1;
+  }
+
+  // * These images are wide.
+  &--style-short {
+    aspect-ratio: 3 / 2;
+  }
+
+  // * These images are square.
+  &--style-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  // * These images are tall.
+  &--style-tall {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+// Other
+// =======================================================
+
+// * Not part of the website, just for the font-test.html to show the bounding boxes to optically adjust the font-trimming.
+.type-test-chart {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    border-top: 1px dotted purple;
+    border-bottom: 1px dotted purple;
+  }
+}

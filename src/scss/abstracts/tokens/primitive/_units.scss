@@ -1,0 +1,136 @@
+// SCSSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// Tokens
+// =======================================================
+
+// Scale
+// -------------------------------------------------------
+$_scale: (
+  // * 0px
+  0: 0,
+  // * 1px
+  1: 0.0625rem,
+  // * 2px
+  2: 0.125rem,
+  // * 3px
+  3: 0.1875rem,
+  // * 4px
+  4: 0.25rem,
+  // * 8px
+  8: 0.5rem,
+  // * 12px
+  12: 0.75rem,
+  // * 16px
+  16: 1rem,
+  // * 20px
+  20: 1.25rem,
+  // * 24px
+  24: 1.5rem,
+  // * 28px
+  28: 1.75rem,
+  // * 32px
+  32: 2rem,
+  // * 36px
+  36: 2.25rem,
+  // * 40px
+  40: 2.5rem,
+  // * 44px
+  44: 2.75rem,
+  // * 48px
+  48: 3rem,
+  // * 52px
+  52: 3.25rem,
+  // * 56px
+  56: 3.5rem,
+  // * 60px
+  60: 3.75rem,
+  // * 64px
+  64: 4rem,
+  // * 68px
+  68: 4.25rem,
+  // * 72px
+  72: 4.5rem,
+  // * 76px
+  76: 4.75rem,
+  // * 80px
+  80: 5rem,
+  // * 84px
+  84: 5.25rem,
+  // * 88px
+  88: 5.5rem,
+  // * 92px
+  92: 5.75rem,
+  // * 96px
+  96: 6rem,
+  // * 100px
+  100: 6.25rem,
+  // * 104px
+  104: 6.5rem,
+  // * 108px
+  108: 6.75rem,
+  // * 112px
+  112: 7rem,
+  // * 116px
+  116: 7.25rem,
+  // * 120px
+  120: 7.5rem,
+  // * 124px
+  124: 7.75rem,
+  // * 128px
+  128: 8rem
+);
+
+// Screen
+// -------------------------------------------------------
+$_screen: (
+  // * 390px
+  390: 24.375rem,
+  // * 560px
+  560: 35rem,
+  // * 640px
+  640: 40rem,
+  // * 768px
+  768: 48rem,
+  // * 1024px
+  1024: 64rem,
+  // * 1280px
+  1280: 80rem
+);
+
+// Function
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Looks at the maps for the key value.
+@function get-unit($map, $key) {
+  // * If no key value is found, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as 0.";
+
+    // * Return a value of zero.
+    @return 0;
+  }
+
+  // * Otherwise, return the key value from the map.
+  @return map.get($map, $key);
+}
+
+// Wrapper
+// -------------------------------------------------------
+// --- Scale ---
+// * Return the key value in the $_scale map via the getter function.
+@function scale($key) {
+  @return get-unit($_scale, $key);
+}
+
+// --- Breakpoint ---
+// * Return the key value in the $_screen map via the getter function.
+@function screen($key) {
+  @return get-unit($_screen, $key);
+}

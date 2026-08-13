@@ -1,0 +1,40 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// work-template.html
+// =======================================================
+
+// .work-info
+// -------------------------------------------------------
+.work-info {
+  // .work-info__content
+  // ------------------------------------------------------
+  &__content {
+    // * 44px gap between main image and content.
+    margin-top: var(--sp-7xl);
+  }
+
+  // .work-info__title
+  // ------------------------------------------------------
+  &__title {
+    // * 16px gap between header title and number.
+    margin-top: var(--sp-lg);
+  }
+
+  // .work-info__body
+  // ------------------------------------------------------
+  &__body {
+    // * 40px gap between header and body.
+    margin-top: var(--sp-4xl);
+  }
+}
+
+// .work-gallery
+// -------------------------------------------------------
+.work-gallery {
+  // * 16px gap between direct children.
+  @include mx-owl-selector(var(--sp-2xl));
+}

@@ -1,0 +1,24 @@
+// SCSS
+// =======================================================
+// * Enables usage of the meta function in sass.
+@use "sass:meta";
+
+// * Imports the semantic layout tokens with the namespace "lt".
+@use "../tokens/semantic/layout" as lt;
+
+// Mixin > Layout Properties
+// =======================================================
+// * Applies a set of layout properties based on the preset key value.
+@mixin lt-base($preset-key) {
+  // * Declare the preset key value as $preset-map.
+  $preset-map: lt.layout-preset($preset-key);
+
+  // * If the preset key value is a nested map:
+  @if meta.type-of($preset-map) == "map" {
+    // * For each property-value pair in the nested map:
+    @each $property-name, $property-value in $preset-map {
+      // * Interpolate the property name and property value as CSS.
+      #{$property-name}: #{$property-value};
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Variables > Color
+// -------------------------------------------------------
+
+:root {
+  // * Mobile - Small, 390
+  --breakpoint-mobile-sm: #{bp-screen-width("mobile-sm")};
+
+  // * Mobile - Large, 560
+  --breakpoint-mobile-lg: #{bp-screen-width("mobile-lg")};
+
+  // * Phablet, 640
+  --breakpoint-phablet: #{bp-screen-width("phablet")};
+
+  // * Tablet - Portrait, 768
+  --breakpoint-tablet-portrait: #{bp-screen-width("tablet-portrait")};
+
+  // * Tablet - Landscape, 1024
+  --brekapoint-tablet-landscape: #{bp-screen-width("tablet-landscape")};
+
+  // * Desktop and Beyond, 1280
+  --breakpoint-desktop: #{bp-screen-width("desktop")};
+}

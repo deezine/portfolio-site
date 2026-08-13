@@ -1,0 +1,54 @@
+// =========================================================
+// --- ST: Breakpoint ---
+// --- A partial for all semantic breakpoint tokens.
+// =========================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// * Imports primitive tokens with the "pt." namespace.
+@use "../primitive/index" as pt;
+
+// Tokens
+// =======================================================
+$_breakpoint: (
+  // * 390px
+  "mobile-sm": pt.screen(390),
+  // * 560px
+  "mobile-lg": pt.screen(560),
+  // * 640px
+  "phablet": pt.screen(640),
+  ---- // * 768px
+  "tablet-portrait": pt.screen(768),
+  // * 1024px
+  "tablet-landscape": pt.screen(1024),
+  // * 1280px
+  "desktop": pt.screen(1280)
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Looks at the map for the key.
+@function get-breakpoint($map, $key) {
+  // * If no key value is found, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as 0.";
+
+    // * Return a value of zero.
+    @return 0;
+  }
+
+  // * Otherwise, return the key value from the map.
+  @return map.get($map, $key);
+}
+
+// Wrapper
+// -------------------------------------------------------
+// * Return the key value in the $_breakpoint map via the getter function.
+@function screen-width($key) {
+  @return get-breakpoint($_breakpoint, $key);
+}

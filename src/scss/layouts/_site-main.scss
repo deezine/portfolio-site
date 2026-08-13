@@ -1,0 +1,17 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// .site-content
+// =======================================================
+.site-content {
+  // * Apply the block-default layout properties.
+  @include mx-lt-base("block-default");
+
+  padding: var(--site-content-padding);
+
+  // * 0px gap between all direct children.
+  @include mx-owl-selector(var(--site-content-gap));
+}

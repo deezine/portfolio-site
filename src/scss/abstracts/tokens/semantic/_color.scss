@@ -1,0 +1,80 @@
+// SCSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// * Imports primitive tokens with the "pt." namespace.
+@use "../primitive/index" as pt;
+
+// Tokens
+// =======================================================
+
+// Theme: Light
+// -------------------------------------------------------
+$_theme-light: (
+  // * Surface
+  "surface-default": pt.palette-light("neutral-900"),
+  // * Text: Underline
+  "text-underline": pt.palette-light("neutral-400"),
+  // * Text: Tertiary
+  "text-tertiary": pt.palette-light("neutral-500"),
+  // * Text: Secondary
+  "text-secondary": pt.palette-light("neutral-300"),
+  // * Text: Primary
+  "text-primary": pt.palette-light("neutral-100"),
+  // * Icon
+  "icon-default": pt.palette-light("neutral-100")
+);
+
+// Theme: Dark
+// -------------------------------------------------------
+$_theme-dark: (
+  // * Surface
+  "surface-default": pt.palette-dark("neutral-100"),
+  // * Text: Underline
+  "text-underline": pt.palette-dark("neutral-600"),
+  // * Text: Tertiary
+  "text-tertiary": pt.palette-dark("neutral-700"),
+  // * Text: Secondary
+  "text-secondary": pt.palette-dark("neutral-800"),
+  // * Text: Primary
+  "text-primary": pt.palette-dark("neutral-900"),
+  // * Icon
+  "icon-default": pt.palette-dark("neutral-900")
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Looks at the maps for the key value.
+@function get-color($map, $key) {
+  // * If no key value is found, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as null.";
+
+    // * Return a value of null.
+    @return null;
+  }
+
+  // * Otherwise, return the key value from the map.
+  @return map.get($map, $key);
+}
+
+// Wrapper
+// -------------------------------------------------------
+
+// --- Light Theme ---
+// * Return the key value in the $_theme-light map via the getter function.
+@function theme-light($key) {
+  @return get-color($_theme-light, $key);
+}
+
+// --- Dark Theme ---
+// * Return the key value in the $_theme-dark map via the getter function.
+@function theme-dark($key) {
+  @return get-color($_theme-dark, $key);
+}

@@ -1,0 +1,18 @@
+// Mixin > Font Base
+// =======================================================
+@mixin ft-base($size, $role, $weight) {
+  // * Properties
+  font-size: var(--ft-size-#{$size});
+  font-weight: var(--ft-weight-#{$weight});
+  line-height: var(--ft-leading-#{$size});
+  letter-spacing: var(--ft-tracking-#{$role});
+
+  // * Trim
+  &::before {
+    margin-top: var(--ft-trim-#{$role}-#{$weight}-top);
+  }
+
+  &::after {
+    margin-bottom: var(--ft-trim-#{$role}-#{$weight}-bottom);
+  }
+}

@@ -1,0 +1,49 @@
+// SCSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// * Imports all primitive token partials with a "pt" namespace.
+@use "../primitive/index" as pt;
+
+// Tokens
+// =======================================================
+
+$_radius: (
+  // * 0px
+  none: pt.scale(0),
+  // * 2px
+  xs: pt.scale(2),
+  // * 4px
+  sm: pt.scale(4),
+  // * 8px
+  md: pt.scale(8)
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Looks at the maps for the key value.
+@function get-radius($map, $key) {
+  // * If no key value is found, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as 0.";
+
+    // * Return a value of zero.
+    @return 0;
+  }
+
+  // Otherwise, return the key value from the map.
+  @return map.get($map, $key);
+}
+
+// Wrapper
+// -------------------------------------------------------
+// * Return the key value in the $_radius map via the getter function.
+@function radius($key) {
+  @return get-radius($_radius, $key);
+}

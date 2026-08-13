@@ -1,0 +1,27 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Variables > Color
+// -------------------------------------------------------
+:root {
+  // * Surface
+  --cl-surface-default: #{cl-theme-light("surface-default")};
+
+  // * Text - Primary
+  --cl-text-primary: #{cl-theme-light("text-primary")};
+
+  // * Text - Secondary
+  --cl-text-secondary: #{cl-theme-light("text-secondary")};
+
+  // * Text - Tertiary
+  --cl-text-tertiary: #{cl-theme-light("text-tertiary")};
+
+  // * Text - Underline
+  --cl-text-underline: #{cl-theme-light("text-underline")};
+
+  // * Icon
+  --cl-icon-default: #{cl-theme-light("icon-default")};
+}

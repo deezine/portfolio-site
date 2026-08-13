@@ -1,0 +1,69 @@
+// SCSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// Tokens
+// =======================================================
+
+$_layout-preset: (
+  // Block-Default Preset
+  // ------------------------------------------------------
+  // * Make element a block, vertical stack and full-width children.
+  "block-default": (
+      "display": "block",
+      "width": 100%,
+    )
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Look in the map for either the key value, nested key value, or the fallback value.
+@function get-layout-preset($map, $key, $nested-key: null, $fallback: null) {
+  // * If no key value is found in the map, then:
+  @if not map.has-key($map, $key) {
+    // * Generate a warning.
+    @warn "Key '#{$key}' was not found. The value will be returned as '#{$fallback}'.";
+
+    // * Return the fallback value (null).
+    @return $fallback;
+  }
+
+  // * Declare the key value as a nested map.
+  $nested-map: map.get($map, $key);
+
+  // * If a nested key value is found in the nested map, then:
+  @if $nested-key {
+    // * If no nested key value is found in the nested map, then:
+    @if not map.has-key($nested-map, $nested-key) {
+      // * Generate a warning.
+      @warn "Nested key '#{$nested-key}' was  not found in '#{$key}'. The value will be returned as '#{$fallback}'.";
+
+      // * Returns the fallback value of null.
+      @return $fallback;
+    }
+
+    // * Return the nested key value found in the nested map.
+    @return map.get($nested-map, $nested-key);
+  }
+
+  // * Otherwise, return the key-value.
+  @return $nested-map;
+}
+
+// Wrapper
+// -------------------------------------------------------
+// * Based on the key value or nested key value:
+@function layout-preset($key, $nested-key: null) {
+  // * Return either the key value, nested key value in the $_layout-preset map or the fallback value via the getter function.
+  @return get-layout-preset(
+    $_layout-preset,
+    $key,
+    $nested-key,
+    $fallback: null
+  );
+}

@@ -1,0 +1,82 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../../abstracts/index" as *;
+
+// Import semantic root variables for aliasing.
+@use "space";
+@use "radius";
+@use "color";
+
+// Component Variables
+// ========================================================
+:root {
+  // Wrapper
+  // ------------------------------------------------------
+
+  // Width
+  --site-wrapper-min-width: #{bp-screen-width(mobile-sm)};
+  --site-wrapper-max-width: #{bp-screen-width(mobile-lg)};
+
+  // Padding
+  --site-wrapper-padding: var(--sp-lg) var(--sp-md) var(--sp-lg) var(--sp-md);
+
+  // Gap
+  --site-wrapper-gap: var(--sp-none);
+
+  // Header
+  // ------------------------------------------------------
+
+  // Padding
+  --site-header-padding: var(--sp-none) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+
+  // Gap
+  --site-nav-gap: var(--sp-sm);
+
+  // Content
+  // ------------------------------------------------------
+  // Padding
+  --site-content-padding: var(--sp-none) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+
+  // Gap
+  --site-content-gap: var(--sp-none);
+
+  // Section
+  // ------------------------------------------------------
+
+  // Padding
+  --site-section-padding-sm: var(--sp-6xl) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+  --site-section-padding-md: var(--sp-6xl) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+  --site-section-padding-lg: var(--sp-8xl) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+
+  // .site-footer
+  // ------------------------------------------------------
+
+  // --- Spacing ----
+  // Padding
+  --site-footer-padding: var(--sp-9xl) var(--sp-none) var(--sp-none)
+    var(--sp-none);
+
+  // Gap
+  // * Gap between title and body.
+  --site-footer-gap: var(--sp-xl);
+
+  // * Gap between links and copyright.
+  --site-footer-body-gap: var(--sp-6xl);
+
+  // * Gap between direct children of links.
+  --site-footer-links-gap: var(--sp-lg);
+
+  // * Gap between direct children of copyright.
+  --site-footer-copyright-gap: var(--sp-lg);
+
+  // .site-img.
+  // ------------------------------------------------------
+  --img-radius: var(--rd-xs);
+}

@@ -1,0 +1,37 @@
+// Reset
+// =======================================================
+
+// * Sets all elements and pseudo-elements to use border-box.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// * Removes default margin, padding, and border from all elements. Makes all elements inherit font-properties.
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+// * Prevents the browser from inflating the size of text. Adds the ability for the website color scheme to change.
+html {
+  font-size: 16px;
+  text-size-adjust: none;
+}
+
+// * Makes the mininum height of the body the viewport.
+body {
+  min-height: 100vh;
+}
+
+// * Makes images, pictures, and videos scale properly and act responsively.
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}

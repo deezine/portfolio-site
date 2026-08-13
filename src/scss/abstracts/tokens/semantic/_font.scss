@@ -1,0 +1,263 @@
+// SCSS
+// =======================================================
+
+// * Enable SCSS maps.
+@use "sass:map";
+
+// * Imports primitive tokens with the "pt." namespace.
+@use "../primitive/index" as pt;
+
+// Tokens
+// =======================================================
+
+// Weight
+// -------------------------------------------------------
+$_font-weight: (
+  "regular": 400,
+  "semibold": 600,
+  "bold": 700,
+);
+
+// Size
+// -------------------------------------------------------
+$_font-size: (
+  "lg": 1.5625rem,
+  "md": 1.25rem,
+  "sm": 1rem,
+);
+
+// Leading
+// -------------------------------------------------------
+$_font-leading: (
+  "lg": 1.6em,
+  "md": 1.6em,
+  "sm": 1.5em,
+);
+
+// Tracking
+// -------------------------------------------------------
+$_font-tracking: (
+  // --- Headline ---
+  "headline": (
+      "lg": -0.0156em,
+      "md": -0.0094em,
+      "sm": -0.0013em,
+    ),
+
+  // --- Body ---
+  "body": (
+      "plain": -0.0013em,
+      "emphasis": 0em,
+    )
+);
+
+// Spacing
+// -------------------------------------------------------
+$_font-margin: (
+  "sm": pt.scale(24),
+  "md": pt.scale(28),
+  "lg": pt.scale(32),
+);
+
+// Trim
+// -------------------------------------------------------
+
+// * Trimming values are brought to closest non-decimal integer. Capsize's values are technically correct,
+// * but the way subpixel values interact with the web is wonky.
+$_font-trim: (
+  // --- Headline ---
+  "headline": (
+      "lg": (
+        // * Bounding box is 20px.
+        "semibold": (
+            "trim-top": -0.375em,
+            "trim-bottom": -0.425em,
+          ),
+      ),
+
+      "md": (
+        // * Bounding box is 16px.
+        "semibold": (
+            "trim-top": -0.391em,
+            "trim-bottom": -0.41em,
+          ),
+      ),
+
+      "sm": (
+        // * Bounding box is 13px.
+        "semibold": (
+            "trim-top": -0.319em,
+            "trim-bottom": -0.3695em,
+          ),
+      ),
+    ),
+
+  // --- Body ---
+  "body": (
+      // * Bounding box is 12px.
+      "plain": (
+          "bold": (
+            "trim-top": -0.398em,
+            "trim-bottom": -0.353em,
+          ),
+          "regular": (
+            "trim-top": -0.399em,
+            "trim-bottom": -0.353em,
+          ),
+        ),
+
+      // * Bounding box is 12px.
+      "emphasis": (
+          "regular": (
+            "trim-top": -0.381em,
+            "trim-bottom": -0.3695em,
+          ),
+        )
+    )
+);
+
+// Decoration
+// -------------------------------------------------------
+$_font-underline: (
+  "none": none,
+
+  "default": (
+    "decoration": underline,
+    "style": dotted,
+    "width": pt.scale(1),
+    "offset": pt.scale(3),
+  ),
+);
+
+// Functions
+// =======================================================
+
+// Getter
+// -------------------------------------------------------
+// * Look in the map for key values up to four levels deep.
+@function get-font(
+  $map,
+  $key-one,
+  $key-two: null,
+  $key-three: null,
+  $key-four: null,
+  $fallback: null
+) {
+  // --- Map ---
+  // * If $key-one doesn't exst in $map-one, then:
+  @if not map.has-key($map, $key-one) {
+    // * Generate a warning.
+    @warn "First-level Key '#{$key-one}' was not found. Returning '#{$fallback}'.";
+
+    // * Return the fallback value.
+    @return $fallback;
+  }
+
+  // --- Nested Map 1 ---
+  // * Get the nested map for $key-one.
+  $nested-map-one: map.get($map, $key-one);
+
+  // * If $key-two doesn't exist, then return the nested-map.
+  @if not $key-two {
+    @return $nested-map-one;
+  }
+
+  // * If $key-two doesn't exist in $nested-map-one, then:
+  @if not map.has-key($nested-map-one, $key-two) {
+    // * Generate a warning.
+    @warn "Second-level Key '#{$key-two}' was not found. Returning '#{$fallback}'.";
+
+    // * Return the fallback value.
+    @return $fallback;
+  }
+
+  // --- Nested Map 2 ---
+  // * Get the nested map for $key-two.
+  $nested-map-two: map.get($nested-map-one, $key-two);
+
+  // * If $key-three doesn't exist, then return the nested map.
+  @if not $key-three {
+    @return $nested-map-two;
+  }
+
+  // * If $key-three doesn't exist in $map-three, then:
+  @if not map.has-key($nested-map-two, $key-three) {
+    // * Generate a warning.
+    @warn "Third-level Key '#{$key-three}' not found. Returning '#{$fallback}'.";
+
+    // * Return the fallback value.
+    @return $fallback;
+  }
+
+  // --- Nested Map 3 ---
+  // * Get the nested map for $key-three.
+  $nested-map-three: map.get($nested-map-two, $key-three);
+
+  // If $key-four doesn't exist, then return the nested map.
+  @if not $key-four {
+    @return $nested-map-three;
+  }
+
+  // * If $key-four doesn't exist in $map-four, then:
+  @if not map.has-key($nested-map-three, $key-four) {
+    // * Generate a warning.
+    @warn "Fourth-level Key '#{$key-four}' not found. Returning '#{$fallback}'.";
+
+    // * Return the fallback value.
+    @return $fallback;
+  }
+
+  // * Otherwise, return the value for $key-four.
+  @return map.get($nested-map-three, $key-four);
+}
+
+// Wrapper
+// -------------------------------------------------------
+// --- Weight ---
+// * Based on key:
+@function weight($key-one) {
+  // * Return the key value or in map return fallback.
+  @return get-font($_font-weight, $key-one, $fallback: 400);
+}
+
+// --- Size ---
+// * Based on key:
+@function size($key-one) {
+  // * Return the key value in map or return fallback.
+  @return get-font($_font-size, $key-one, $fallback: 1rem);
+}
+
+// --- Size ---
+// * Based on key:
+@function leading($key-one) {
+  // * Return the key value in map or return fallback.
+  @return get-font($_font-leading, $key-one, $fallback: 1.5em);
+}
+
+// --- Tracking ---
+// * Based on two keys:
+@function tracking($key-one, $key-two) {
+  // * Return the nested key value in map or return fallback.
+  @return get-font($_font-tracking, $key-one, $key-two, $fallback: 0);
+}
+
+// --- Spacing ---
+// * Based on key:
+@function margin($key-one) {
+  // * Return the key value in map or return fallback.
+  @return get-font($_font-margin, $key-one, $fallback: 24rem);
+}
+
+// --- Underline ---
+// * Based on either one or two key values:
+@function underline($key-one, $key-two: null) {
+  // * Return the key or nested key value or return fallback.
+  @return get-font($_font-underline, $key-one, $key-two, $fallback: null);
+}
+
+// --- Trim ---
+// * Based on four keys:
+@function trim($key-one, $key-two, $key-three, $key-four) {
+  // * Return the fourth level nested key value or return fallback.
+  @return get-font($_font-trim, $key-one, $key-two, $key-three, $key-four, 0);
+}
