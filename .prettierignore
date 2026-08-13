@@ -1,0 +1,26 @@
+# Ignore libraries and development stuff.
+node_modules/
+**/*.gitattributes
+**/*.map
+
+# Ignore any image files.
+**/*.jpg
+**/*.png
+**/*.svg
+**/*.jpeg
+
+# Ignore any font files.
+**/*.woff
+**/*.woff2
+
+# Ignore the robots.txt
+**/robots.txt
+
+# Ignore <src> html files. 
+src/**/*.html
+src/**/*.njk
+
+# Ignore the clean, minified main.css in dist
+dist/css/main.css
+
+

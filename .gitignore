@@ -1,0 +1,12 @@
+# Ignore Dist Folder
+dist/ 
+
+# Ignore Node Modules
+node_modules/
+
+# Ignore Editor Files
+.vscode
+.DS_Store
+
+# Ignore Logs
+.log
