@@ -17,6 +17,7 @@
     "htmlhint": "^1.9.2",
     "postcss": "^8.5.9",
     "prettier": "^3.8.1",
+    "sass": "^1.102.0",
     "stylelint": "^17.6.0",
     "stylelint-config-clean-order": "^8.0.1",
     "stylelint-config-standard": "^40.0.0",
