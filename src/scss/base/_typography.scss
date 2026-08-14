@@ -220,13 +220,12 @@ p > a {
 
 // Paragraphs
 // -------------------------------------------------------
-
-// * This is the container for text paragraphs.
+// * Wrapper for custom spaced paragraphs.
 .text-paragraph-wrapper {
-  // * Breaks words if they are way too long.
+  // * If words are too long, break-them.
   overflow-wrap: break-word;
 
-  // * Wraps text so it looks nice on the web.
+  // * Wraps text so it looks nice.
   text-wrap-style: pretty;
 
   // * 32px between large paragraphs (headline-lg).

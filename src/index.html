@@ -1,30 +1,36 @@
 ---
-layout: base.html
-title: Home
-author: Francesco Roda
-description: This is a filler description. A proper description will be added at a later date.
-keywords: keyword one, keyword two, keyword three
-robots: index, nofollow, noimageindex
+layout: layouts/base.html
+page:
+  title: Home
+meta:
+  title: Home
+  author: Francesco Roda
+  description: A short description will eventually go in this space.
+  keywords: keyword one, keyword, keyword three
+  robots: index, nofollow, noimageindex
+  url: yourwebsitehere.com
 ---
 
-<!-- === | Content | === -->
-<section class="home-blurb site-section site-section--padding-md">
-  <h1 class="home-blurb__title text-body text-body--type-plain-bold text-color--primary text-title--margin-sm">
+<!-- | Home - Introduction | -->
+<section class="home-intro site-section site-section--padding-md">
+  <h1 class="home-intro__title text-body text-body--type-plain-bold text-color--primary text-title--margin-sm">
     Hello, I'm Francesco.
   </h1>
-
-  <div class="home-blurb__body text-paragraph-wrapper">
-    <p class="home-blurb__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+  <!-- P1 -->
+  <div class="home-intro__body text-paragraph-wrapper">
+    <p class="home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
       I’m a UI designer focused on creating interfaces that are thoughtful,
       functional, and simple —
       <span class="text-body text-body--type-emphasis-reg text-color--primary">not too much, not too little, but just
         enough.</span>
     </p>
-    <p class="home-blurb__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+    <!-- P2 -->
+    <p class="home-home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
       Currently, I’m sharpening my web development and design skills, lifting
       four times a week, and working on my garden outside.
     </p>
-    <p class="home-blurb__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+    <!-- P3 -->
+    <p class="home-home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
       I’m actively seeking a full-time role and open to freelance opportunities.
       If you’re interested, then
       <a href="mailto:francescoisadesigner@proton.me"
@@ -34,6 +40,7 @@ robots: index, nofollow, noimageindex
   </div>
 </section>
 
+<!-- | Home - Selected Work | -->
 <section class="home-selected-work site-section site-section--padding-lg">
   <h2
     class="home-selected-work__title text-headline text-headline--type-lg-semibold text-color--primary text-title--margin-lg">

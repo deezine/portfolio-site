@@ -4,20 +4,19 @@
 // HTML
 // =======================================================
 html {
-  // * Reserves space for scrollbar, but only displays it when necessary.
-  scrollbar-gutter: stable;
-
-  // * The scrollbar appears on vertical overflow.
-  overflow-y: scroll;
+  // --- Scroll ---
+  scrollbar-gutter: stable; // * Reserves space for scrollbar, but only displays it when necessary.
+  overflow-y: scroll; // * The scrollbar appears on vertical overflow.
 }
 
 // BODY
 // =======================================================
 body {
-  user-select: none;
+  // --- Other ---
+  user-select: none; // * Disable user selection on site.
 
   // --- Size --
-  min-height: 100vh;
+  min-height: 100vh; // * Website will always be as tall as viewport.
 
   // --- Margin ---
   margin: 0;
@@ -32,13 +31,16 @@ body {
   // --- Layout ---
   @include mx-lt-base("block-default");
 
-  // * Layout is contained to .site-wrapper and will not affect body or html.
-  contain: layout;
+  contain: layout; // * Layout is contained to .site-wrapper and will not affect body or html.
 
   // --- Size ---
-  // * .site-wrapper will be no smaller than 390px and no larger than 560px.
-  min-width: var(--site-wrapper-min-width);
-  max-width: var(--site-wrapper-max-width);
+  min-width: var(
+    --site-wrapper-min-width
+  ); // * It will be no smaller than 390px.
+
+  max-width: var(
+    --site-wrapper-max-width
+  ); // * It will be no larger than 560px.
 
   // * .site-wrapper is as tall as the viewport.
   min-height: 100vh;

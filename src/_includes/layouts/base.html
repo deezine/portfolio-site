@@ -3,18 +3,18 @@
   
 <!-- === | Head | === -->
 <head>
-  {% include "head.html" %}
+  {% include "partials/head.html" %}
 </head>
 
 <!-- === | Body | === -->
 <body>
   <div class="site-wrapper">
     <!-- === | Header | === -->
-    {% include "site-header.html" %}
+    {% include "partials/site-header.html" %}
     <!-- === | Main | === -->
     <main class="site-content">{{ content | safe }}</main>
     <!-- === | Footer | === -->
-    {% include "site-footer.html" %}
+    {% include "partials/site-footer.html" %}
   </div>
 </body>
 

@@ -55,33 +55,33 @@
 />
 
 <!-- === | Page Information | === -->
-<title>{{ title }}</title>
-<meta name="author" content="{{ author }}" />
-<meta name="description" content="{{ description }}" />
-<meta name="keywords" content="{{ keywords }}" />
+<title>{{ page.title }}</title>
+<meta name="author" content="{{ meta.author }}" />
+<meta name="description" content="{{ meta.description }}" />
+<meta name="keywords" content="{{ meta.keywords }}" />
 
 <!-- === | SEO | === -->
 <!-- Robots -->
-<meta name="robots" content="{{ robots }}" />
+<meta name="robots" content="{{ meta.robots }}" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ title}}" />
-<meta property="og:description" content="{{ description }}" />
+<meta property="og:title" content="{{ meta.title}}" />
+<meta property="og:description" content="{{ meta.description }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="yourwebsite.com" />
+<meta property="og:url" content="{{ meta.url }}" />
 <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ title }}" />
-<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:title" content="{{ meta.title }}" />
+<meta name="twitter:description" content="{{ meta.description }}" />
 <meta
   name="twitter:image"
   content="https://yourwebsite.com/path-to-image.jpg"
 />
 
 <!-- Canonical -->
-<link rel="canonical" href="https://yourwebsite.com/your-page" />
+<link rel="canonical" href="{{ meta.url }}" />
 
 <!-- === | Mobile Themes | === -->
 <!-- Light -->
