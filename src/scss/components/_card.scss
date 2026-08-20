@@ -1,0 +1,28 @@
+// SCSS
+// ========================================================
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// Card
+// ========================================================
+.card-wrapper {
+  @include mx-lt-base("block-default");
+
+  text-decoration: none;
+}
+
+.card {
+  padding: var(--card-padding);
+}
+
+.card__img + .card__label {
+  margin-top: var(--card-gap);
+}
+
+.card__label {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--card-label-gap);
+  align-items: flex-start;
+  justify-content: space-between;
+}

@@ -1,0 +1,11 @@
+// SCSS
+// =======================================================
+
+// * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
+@use "../abstracts/index" as *;
+
+// Home
+// =======================================================
+.home-selected-work__list {
+  @include mx-owl-selector(var(--sp-2xl));
+}

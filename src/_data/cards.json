@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "title": "Portfolio",
+      "class": "portfolio",
+      "year": "2026",
+      "url": "/work-portfolio/",
+      "img_url": "/",
+      "img_alt": "A short description goes here."
+    },
+    {
+      "title": "Lilale",
+      "class": "lilale",
+      "year": "2021",
+      "url": "/work-lilale/",
+      "img_url": "/",
+      "img_alt": "A short description goes here."
+    },
+    {
+      "title": "New Palette",
+      "class": "new-palette",
+      "year": "2021",
+      "url": "/work-new-palette/",
+      "img_url": "/",
+      "img_alt": "A short description goes here."
+    }
+  ]
+}

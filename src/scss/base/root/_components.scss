@@ -73,4 +73,10 @@
   // Images
   // ------------------------------------------------------
   --img-radius: var(--rd-xs);
+
+  // Card
+  // ------------------------------------------------------
+  --card-padding: var(--sp-none) var(--sp-none) var(--sp-none) var(--sp-none);
+  --card-gap: var(--sp-sm);
+  --card-label-gap: var(--sp-sm);
 }

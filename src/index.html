@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.html
 title: Home
-author: 
+author:
   name: Francesco Roda
   email: francescoisadesigner@proton.me
 meta:
@@ -42,10 +42,22 @@ meta:
 
 <!-- | Home - Selected Work | -->
 <section class="home-selected-work site-section site-section--padding-lg">
-  <h2
-    class="home-selected-work__title {{ text_style.headline.large }} text-color--primary text-title--margin-lg">
+  <h2 class="home-selected-work__title {{ text_style.headline.large }} text-color--primary text-title--margin-lg">
     Selected Work
   </h2>
-
-  <div class="home-selected-work__list"></div>
+  <!-- List -->
+  <div class="home-selected-work__list">
+    {% for card in cards.content %}
+    <!-- Card - {{ card.title }}-->
+    <a class="card-wrapper" href=" {{ card.url }}">
+      <div class="card card--for-{{ card.class }}">
+        <img class="card__img site-img site-img--style-square" src="{{ card.img_url }}" alt="{{ card.img_alt }}">
+        <div class="card__label">
+          <p class="card__label-title {{ text_style.body.plain.bold }} text-color--primary">{{ card.title }}</p>
+          <p class="card__label-year {{ text_style.body.plain.reg }} text-color--secondary">{{ card.year }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </section>

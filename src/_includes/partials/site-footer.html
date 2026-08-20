@@ -3,7 +3,7 @@
   <div class="site-footer__links">
     {% for link in footer.link %}
     <!-- {{ link.text }} -->
-    <a class="site-footer--{{link.class}} text-body {{ text_style.body.plain.reg }} text-color--primary text-underline--style-default" href="{{ link.url }}">{{ link.text }}</a>
+    <a class="site-footer--{{ link.class }} text-body {{ text_style.body.plain.reg }} text-color--primary text-underline--style-default" href="{{ link.url }}">{{ link.text }}</a>
     {% endfor %}
   </div>
   <!-- Copyright -->
