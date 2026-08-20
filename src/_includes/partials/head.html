@@ -4,49 +4,22 @@
 
 <!-- ===| Preloading |=== -->
 <!-- Preload all typefaces. -->
+{% for preload in fonts.preload %}
 <link
   rel="preload"
-  href="/assets/fonts/tex-gyre-heros-regular.woff2"
+  href="{{ preload.url }}"
   as="font"
-  type="font/woff2"
+  type="{{ preload.type }}"
   crossorigin
 />
-<link
-  rel="preload"
-  href="/assets/fonts/tex-gyre-heros-bold.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/assets/fonts/libre-caslon-condensed-semibold.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/assets/fonts/libre-caslon-condensed-regular.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/assets/fonts/libre-caslon-condensed-regular-italic.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-
+{% endfor %}
 <!-- Preload CSS -->
 <link rel="preload" href="/css/main.css" as="style" type="text/css" />
 
 <!-- === | CSS | === -->
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- ===| Favicon |=== -->
+<!-- === | Favicon | === -->
 <link
   rel="icon"
   href="/assets/favicon/favicon.svg"
@@ -55,8 +28,8 @@
 />
 
 <!-- === | Page Information | === -->
-<title>{{ page.title }}</title>
-<meta name="author" content="{{ meta.author }}" />
+<title>{{ title }}</title>
+<meta name="author" content="{{ author.name }}" />
 <meta name="description" content="{{ meta.description }}" />
 <meta name="keywords" content="{{ meta.keywords }}" />
 
@@ -65,7 +38,7 @@
 <meta name="robots" content="{{ meta.robots }}" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ meta.title}}" />
+<meta property="og:title" content="{{ title}}" />
 <meta property="og:description" content="{{ meta.description }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ meta.url }}" />
@@ -73,7 +46,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ meta.title }}" />
+<meta name="twitter:title" content="{{ title }}" />
 <meta name="twitter:description" content="{{ meta.description }}" />
 <meta
   name="twitter:image"
@@ -84,6 +57,9 @@
 <link rel="canonical" href="{{ meta.url }}" />
 
 <!-- === | Mobile Themes | === -->
+ <!-- Tells the web that the site supports light and dark mode. -->
+<meta name="color-scheme" content="dark light">
+
 <!-- Light -->
 <meta
   name="theme-color"

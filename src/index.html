@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.html
-page:
-  title: Home
+title: Home
+author: 
+  name: Francesco Roda
+  email: francescoisadesigner@proton.me
 meta:
-  title: Home
-  author: Francesco Roda
   description: A short description will eventually go in this space.
   keywords: keyword one, keyword, keyword three
   robots: index, nofollow, noimageindex
@@ -13,28 +13,28 @@ meta:
 
 <!-- | Home - Introduction | -->
 <section class="home-intro site-section site-section--padding-md">
-  <h1 class="home-intro__title text-body text-body--type-plain-bold text-color--primary text-title--margin-sm">
+  <h1 class="home-intro__title {{ text_style.body.plain.bold }} text-color--primary text-title--margin-sm">
     Hello, I'm Francesco.
   </h1>
   <!-- P1 -->
   <div class="home-intro__body text-paragraph-wrapper">
-    <p class="home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+    <p class="home-intro__body-text {{ text_style.body.plain.reg }} text-color--primary text-paragraph--margin-sm">
       I’m a UI designer focused on creating interfaces that are thoughtful,
       functional, and simple —
-      <span class="text-body text-body--type-emphasis-reg text-color--primary">not too much, not too little, but just
+      <span class="{{ text_style.body.emphasis.reg }} text-color--primary">not too much, not too little, but just
         enough.</span>
     </p>
     <!-- P2 -->
-    <p class="home-home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+    <p class="home-intro__body-text {{ text_style.body.plain.reg }} text-color--primary text-paragraph--margin-sm">
       Currently, I’m sharpening my web development and design skills, lifting
       four times a week, and working on my garden outside.
     </p>
     <!-- P3 -->
-    <p class="home-home-intro__body-text text-body text-body--type-plain-reg text-color--primary text-paragraph--margin-sm">
+    <p class="home-intro__body-text {{ text_style.body.plain.reg }} text-color--primary text-paragraph--margin-sm">
       I’m actively seeking a full-time role and open to freelance opportunities.
       If you’re interested, then
-      <a href="mailto:francescoisadesigner@proton.me"
-        class="text-body text-body--type-emphasis-reg text-color--primary text-underline--style-default">let’s get in
+      <a href="mailto:{{ author.email }}"
+        class="{{ text_style.body.emphasis.reg }} text-color--primary text-underline--style-default">let’s get in
         touch.</a>
     </p>
   </div>
@@ -43,7 +43,7 @@ meta:
 <!-- | Home - Selected Work | -->
 <section class="home-selected-work site-section site-section--padding-lg">
   <h2
-    class="home-selected-work__title text-headline text-headline--type-lg-semibold text-color--primary text-title--margin-lg">
+    class="home-selected-work__title {{ text_style.headline.large }} text-color--primary text-title--margin-lg">
     Selected Work
   </h2>
 

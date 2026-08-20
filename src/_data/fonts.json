@@ -1,0 +1,24 @@
+{
+  "preload": [
+    {
+      "url": "/assets/fonts/tex-gyre-heros-regular.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "url": "/assets/fonts/tex-gyre-heros-bold.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "url": "/assets/fonts/libre-caslon-condensed-semibold.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "url": "/assets/fonts/libre-caslon-condensed-regular.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "url": "/assets/fonts/libre-caslon-condensed-regular-italic.woff2",
+      "type": "font/woff2"
+    }
+  ]
+}

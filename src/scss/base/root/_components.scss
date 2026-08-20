@@ -1,21 +1,20 @@
 // SCSS
-// =======================================================
-
+// ========================================================
 // * Imports semantic tokens / mixins without a namepsace, but with forwarded prefixes.
 @use "../../abstracts/index" as *;
 
-// Import semantic root variables for aliasing.
+// * Import semantic root variables for aliasing.
 @use "space";
 @use "radius";
 @use "color";
 
-// Component Variables
+// Variables
 // ========================================================
 :root {
   // Wrapper
   // ------------------------------------------------------
 
-  // Width
+  // Size
   --site-wrapper-min-width: #{bp-screen-width(mobile-sm)};
   --site-wrapper-max-width: #{bp-screen-width(mobile-lg)};
 
@@ -37,6 +36,7 @@
 
   // Content
   // ------------------------------------------------------
+
   // Padding
   --site-content-padding: var(--sp-none) var(--sp-none) var(--sp-none)
     var(--sp-none);
@@ -47,36 +47,30 @@
   // Section
   // ------------------------------------------------------
 
-  // Padding
+  // Small Padding
   --site-section-padding-sm: var(--sp-6xl) var(--sp-none) var(--sp-none)
     var(--sp-none);
+
+  // Medium Padding
   --site-section-padding-md: var(--sp-6xl) var(--sp-none) var(--sp-none)
     var(--sp-none);
+
+  // Large Padding
   --site-section-padding-lg: var(--sp-8xl) var(--sp-none) var(--sp-none)
     var(--sp-none);
 
-  // .site-footer
+  // Footer
   // ------------------------------------------------------
 
-  // --- Spacing ----
   // Padding
-  --site-footer-padding: var(--sp-9xl) var(--sp-none) var(--sp-none)
+  --site-footer-padding: var(--sp-8xl) var(--sp-none) var(--sp-none)
     var(--sp-none);
 
   // Gap
-  // * Gap between title and body.
-  --site-footer-gap: var(--sp-xl);
+  --site-footer-gap: var(--sp-md);
+  --site-footer-links-gap: var(--sp-sm);
 
-  // * Gap between links and copyright.
-  --site-footer-body-gap: var(--sp-6xl);
-
-  // * Gap between direct children of links.
-  --site-footer-links-gap: var(--sp-lg);
-
-  // * Gap between direct children of copyright.
-  --site-footer-copyright-gap: var(--sp-lg);
-
-  // .site-img.
+  // Images
   // ------------------------------------------------------
   --img-radius: var(--rd-xs);
 }

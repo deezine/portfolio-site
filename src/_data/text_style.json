@@ -1,0 +1,16 @@
+{
+  "body": {
+    "plain": {
+      "bold": "text-body text-body--type-plain-bold text",
+      "reg": "text-body text-body--type-plain-reg"
+    },
+    "emphasis": {
+      "reg": "text-body text-body--type-emphasis-reg"
+    }
+  },
+  "headline": {
+    "large": "text-headline text-headline--type-lg-semibold",
+    "medium": "text-headline text-headline--type-md-semibold",
+    "small": "text-headline text-headline--type-sm-semibold"
+  }
+}

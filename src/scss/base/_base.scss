@@ -1,88 +1,84 @@
+// SCSS
+// =======================================================
 // * Imports semantinc tokens and mixins without namespace (forwarded with prefixes).
 @use "../abstracts/index" as *;
 
-// HTML
+// Base
 // =======================================================
+
+// HTML
+// ------------------------------------------------------
 html {
-  // --- Scroll ---
-  scrollbar-gutter: stable; // * Reserves space for scrollbar, but only displays it when necessary.
-  overflow-y: scroll; // * The scrollbar appears on vertical overflow.
+  // * Reserves space for scrollbar, but only displays it when necessary.
+  scrollbar-gutter: stable;
+
+  // * The scrollbar appears on vertical overflow.
+  overflow-y: scroll;
 }
 
-// BODY
-// =======================================================
+// Body
+// ------------------------------------------------------
 body {
-  // --- Other ---
-  user-select: none; // * Disable user selection on site.
+  // * Disable user selection on site.
+  user-select: none;
 
-  // --- Size --
-  min-height: 100vh; // * Website will always be as tall as viewport.
-
-  // --- Margin ---
+  // * Website will always be as tall as viewport.
+  min-height: 100vh;
   margin: 0;
-
-  // --- Color ---
   background-color: var(--cl-surface-default);
 }
 
-// .site-wrapper
-// -------------------------------------------------------
+// Wrapper
+// ------------------------------------------------------
 .site-wrapper {
-  // --- Layout ---
+  // * Sets wrapper as default block styling.
   @include mx-lt-base("block-default");
 
-  contain: layout; // * Layout is contained to .site-wrapper and will not affect body or html.
+  // * Disable user selection on site.
+  user-select: none;
 
-  // --- Size ---
-  min-width: var(
-    --site-wrapper-min-width
-  ); // * It will be no smaller than 390px.
+  // * Layout is contained to .site-wrapper and will not affect body or html.
+  contain: layout;
 
-  max-width: var(
-    --site-wrapper-max-width
-  ); // * It will be no larger than 560px.
+  // * It will be no smaller than 390px and no larger than 560px.
+  min-width: var(--site-wrapper-min-width);
+  max-width: var(--site-wrapper-max-width);
 
-  // * .site-wrapper is as tall as the viewport.
+  // * Wrapper is as tall as the viewport, vh is fallback for dvh.
   min-height: 100vh;
   min-height: 100dvh;
 
-  // --- Margin ---
-  // * Centers .site-wrapper in body.
+  // * Centers wrapper in body.
   margin-block: 0;
   margin-inline: auto;
-
-  // --- Padding ---
   padding: var(--site-wrapper-padding);
 
-  // --- Gap ---
-  // * 0px gap between direct children of .site-wrapper.
+  // * 0px gap between direct children of wrapper.
   @include mx-owl-selector(var(--site-wrapper-gap));
 }
 
-// .site-img
-// -------------------------------------------------------
+// Images
+// ------------------------------------------------------
 .site-img {
-  /// * Sitewide properties for all images.
   width: 100%;
   border-radius: var(--img-radius);
+
+  // * Images will correctly fill their container.
   object-fit: cover;
 
-  // * Thesese images are very thin.
+  // Styles
   &--style-wide {
     aspect-ratio: 2 / 1;
   }
 
-  // * These images are wide.
   &--style-short {
     aspect-ratio: 3 / 2;
   }
 
-  // * These images are square.
   &--style-square {
     aspect-ratio: 1 / 1;
   }
 
-  // * These images are tall.
   &--style-tall {
     aspect-ratio: 3 / 4;
   }

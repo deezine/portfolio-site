@@ -25,7 +25,7 @@ export default function (eleventyConfig) {
 }
 
 export const config = {
-  // * Use Nunjuks for HTML and Markdown.
+  // * Use Nunjuks for HTML and Markdown, which means I can just use plain .html files.
   htmlTemplateEngine: "njk",
   markdownTemplateEngine: "njk",
 };

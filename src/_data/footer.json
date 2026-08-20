@@ -1,0 +1,24 @@
+{
+  "link": [
+    {
+      "text": "Email",
+      "class": "email",
+      "url": "mailto:francescoisadesigner@proton.me"
+    },
+    {
+      "text": "Resume",
+      "class": "resume",
+      "url": "/"
+    },
+    {
+      "text": "Linkedin",
+      "class": "linkedin",
+      "url": "/"
+    },
+    {
+      "text": "Layers",
+      "class": "layers",
+      "url": "/"
+    }
+  ]
+}
